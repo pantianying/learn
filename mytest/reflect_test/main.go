@@ -14,10 +14,11 @@ type A struct {
 //https://studygolang.com/articles/12348?fr=sidebar
 func main() {
 	//test2()
-	user := User{1, "Allen.Wu", 25}
-
-	test3(user)
+	//user := User{1, "Allen.Wu", 25}
+	//
+	//test3(user)
 }
+
 func test1() {
 	var a = A{
 		Num: 1,
