@@ -18,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="springboot-test1-api" options="-parameters" />
       <module name="springboot-test1-utils" options="-parameters" />
+      <module name="springboot_test1" options="" />
       <module name="starter" options="-parameters" />
     </option>
   </component>

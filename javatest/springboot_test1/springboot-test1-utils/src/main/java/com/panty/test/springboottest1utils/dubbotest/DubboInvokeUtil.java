@@ -10,7 +10,7 @@ public class DubboInvokeUtil {
   //为什么注入不了需要知道
 //  @Resource private RegistryConfig registryConfig;
 //  @Resource private ApplicationConfig applicationConfig;
-
+  private static GenericService genericService;
   public Object invokeDubbo(Object[] parameterObjects) {
     ApplicationConfig applicationConfig = new ApplicationConfig();
     applicationConfig.setName("pantytest");
@@ -25,12 +25,13 @@ public class DubboInvokeUtil {
 
 
     ReferenceConfig<GenericService> referenceConfig = new ReferenceConfig<>();
+
+
     referenceConfig.setApplication(applicationConfig);
     referenceConfig.setRegistry(registryConfig);
-
     referenceConfig.setInterface("com.tuya.aries.client.service.IFunctionMService");
     referenceConfig.setGeneric(true);
-    GenericService genericService = referenceConfig.get();
+    genericService = referenceConfig.get();
     String[] paramTypes = new String[] {"xxxxx"};
     RpcContext.getContext().setAttachment("pantytest", "pantytest");
     Object returnValue = genericService.$invoke("queryDeviceStatus", paramTypes, parameterObjects);
