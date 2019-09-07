@@ -7,7 +7,7 @@ import (
 	"runtime"
 )
 
-const sysflag = "hianaly"
+const sysflag = "@"
 
 var (
 	ShowDebug   = true

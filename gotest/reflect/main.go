@@ -1,8 +1,8 @@
 package main
 
 import (
-	"../debug"
 	"fmt"
+	"github.com/pantianying/keeplearning/gotest/debug"
 	"reflect"
 )
 
@@ -13,6 +13,7 @@ type A struct {
 
 //https://studygolang.com/articles/12348?fr=sidebar
 func main() {
+	fmtRefeclt()
 	//test2()
 	//user := User{1, "Allen.Wu", 25}
 	//
