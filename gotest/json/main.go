@@ -27,3 +27,19 @@ func test2() {
 	json.Unmarshal([]byte(v2), &test)
 	fmt.Printf("resp:%+v", test)
 }
+
+var v3 string = `{
+  "pid1,pid2":{
+    " standardCode_1":"dpCode_1",
+    " standardCode_2":"dpCode_2"
+  },
+  "pid3":{
+    " standardCode_1":"dpCode1_1",
+    " standardCode_2":"dpCode_2"
+  }
+}`
+
+func test3() {
+	var m map[string]interface{}
+	json.Unmarshal([]byte(v3), &m)
+}
