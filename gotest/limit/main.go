@@ -24,5 +24,18 @@ func main() {
 		VaryBy:      &throttled.VaryBy{Path: true},
 	}
 
-	http.ListenAndServe(":8080", httpRateLimiter.RateLimit(myHandler))
+	mux := http.NewServeMux()
+	mux.Handle("/", httpRateLimiter.RateLimit(&myHandler{}))
+	srv := http.Server{
+		Addr:    ":8080",
+		Handler: mux,
+	}
+	srv.ListenAndServe()
+
+}
+
+type myHandler struct{}
+
+func (*myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("this is version 3"))
 }
