@@ -13,11 +13,13 @@ type A struct {
 
 //https://studygolang.com/articles/12348?fr=sidebar
 func main() {
-	fmtRefeclt()
+	//fmtRefeclt()
 	//test2()
 	//user := User{1, "Allen.Wu", 25}
 	//
 	//test3(user)
+	result := GetFunctionName(MyFunction)
+	fmt.Println(result)
 }
 
 func test1() {

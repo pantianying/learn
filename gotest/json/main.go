@@ -12,7 +12,7 @@ type TestType1 struct {
 }
 
 func main() {
-	test2()
+	test4()
 }
 func test1() {
 	var test TestType1
@@ -42,4 +42,12 @@ var v3 string = `{
 func test3() {
 	var m map[string]interface{}
 	json.Unmarshal([]byte(v3), &m)
+}
+func test4() {
+	var a interface{}
+	var b float64
+	b = 10
+	a = b
+	byte, e := json.Marshal(a)
+	fmt.Println(string(byte), e)
 }
