@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+
+service Greeter {
+    rpc GetUser (HelloReq) returns (HelloReply1) {}
+}
+
+// The request message containing the user's name.
+message HelloReq {
+    string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply1 {
+    string message = 1;
+}
