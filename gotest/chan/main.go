@@ -14,6 +14,11 @@ type reqStu struct {
 
 func main() {
 	ch1 = make(chan *reqStu, 100)
+
+	for i := 0; i < 100; i++ {
+		go work()
+	}
+
 	for {
 		time.Sleep(1 * time.Second)
 		req := &reqStu{
@@ -21,6 +26,7 @@ func main() {
 			data: "data example",
 		}
 		ch1 <- req
+
 		select {
 		case <-req.done:
 			fmt.Println("做完了")
