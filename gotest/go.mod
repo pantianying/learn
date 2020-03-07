@@ -7,6 +7,7 @@ require github.com/gorilla/mux v1.7.3
 require (
 	github.com/apache/dubbo-go-hessian2 v1.2.5-0.20190731020727-1697039810c8
 	github.com/apache/pulsar/pulsar-function-go v0.0.0-20191217081830-dfc8c1cad331
+	github.com/coreos/etcd v3.3.10+incompatible
 	github.com/didip/tollbooth v4.0.2+incompatible
 	github.com/golang/protobuf v1.3.2
 	github.com/hashicorp/golang-lru v0.5.3 // indirect
