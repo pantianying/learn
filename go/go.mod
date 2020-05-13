@@ -1,4 +1,4 @@
-module github.com/pantianying/keeplearning/gotest
+module github.com/pantianying/learn/go
 
 go 1.12
 
