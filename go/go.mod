@@ -10,13 +10,7 @@ require (
 	github.com/coreos/etcd v3.3.10+incompatible
 	github.com/didip/tollbooth v4.0.2+incompatible
 	github.com/golang/protobuf v1.3.2
-	github.com/hashicorp/golang-lru v0.5.3 // indirect
-	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
-	github.com/samuel/go-zookeeper v0.0.0-20190923202752-2cc03de413da // indirect
-	github.com/throttled/throttled v2.2.4+incompatible // indirect
 	github.com/yuin/gopher-lua v0.0.0-20190514113301-1cd887cd7036
-	gitlab.com/Tuya/gostore v0.0.0-20191209081522-749cd37f8165 // indirect
-	golang.org/x/time v0.0.0-20190921001708-c4c64cad1fd0 // indirect
 	google.golang.org/grpc v1.21.0
 )
 
