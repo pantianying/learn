@@ -44,4 +44,5 @@ func main() {
 	for h.Len() > 0 {
 		fmt.Printf("%d ", heap.Pop(h))
 	}
+
 }

@@ -7,6 +7,8 @@ import (
 	"strings"
 )
 
+func main() {}
+
 func MyFunction() {
 	fmt.Println("my function")
 }

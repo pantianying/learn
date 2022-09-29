@@ -1,23 +1,26 @@
 package main
 
-import (
-	"encoding/hex"
-	"fmt"
-	"strings"
-)
+//条件：给定一个N*N(N为奇数，且N>1)的方格，以中心方格为原点，按照以下原则定义运动轨迹
+//1 每次仅移动一格，仅能向相邻(上，下，左，右)的格子移动
+//2 沿着顺时针旋转，比如原点首先向下移动一格，然后向左移动
+//3 沿着正方形边移动，在正方形右下角向下移动一格
+//4 从原点移动到某个方格的步数定义为该方格的距离，两个方格之间的最短移动步数定义为距离
+//
+//问题: 不限实现语言，给定两个方格坐标(x1, y1)，(x2, y2)，横坐标(x)表示行(行为1，2，3，… N)，纵坐标(y)为列(列为1，2，3，…N)，求两个方格之间的距离
 
 func main() {
-	test2()
-}
-func test1() {
-	a := "AAA"
-	b := "BBB"
-	c := "CCC"
-	fmt.Println(strings.Join([]string{a, b, c}, "."))
+
 }
 
-func test2() {
-	a := []byte{0x77, 0x77}
-	s := hex.EncodeToString(a)
-	fmt.Println(s)
+func path(n int) int {
+	x := (n + 1) / 2
+	y := (n + 1) / 2
+	k := 0
+	cache := make([][]bool, n)
+	for k <= n-1 {
+		cache[x-1][y-1] = false
+		path(n - 1)
+		k++
+	}
+	change()
 }

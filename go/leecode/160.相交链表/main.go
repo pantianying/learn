@@ -7,10 +7,10 @@ package main
 在返回结果后，两个链表仍须保持原有的结构。
 可假定整个链表结构中没有循环。
 程序尽量满足 O(n) 时间复杂度，且仅用 O(1) 内存。
+        定义两个指针, 第一轮让两个到达末尾的节点指向另一个链表的头部, 最后如果相遇则为交点(在第一轮移动中恰好抹除了长度差)
+        两个指针等于移动了相同的距离, 有交点就返回, 无交点就是各走了两条指针的长度
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/intersection-of-two-linked-lists
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+在这里第一轮体现在pA和pB第一次到达尾部会移向另一链表的表头, 而第二轮体现在如果pA或pB相交就返回交点, 不相交最后就是null==null
 */
 type ListNode struct {
 	Val  int
@@ -18,17 +18,21 @@ type ListNode struct {
 }
 
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
-	tmpA, tmpB := headA, headB
-	for tmpA != tmpB {
-		tmpA = tmpA.Next
-		tmpB = tmpB.Next
-		if tmpA == nil {
-			tmpA = headB
-		}
-		if headB == nil {
-			tmpB = headA
-		}
-
+	if headA == nil || headB == nil {
+		return nil
 	}
-	return tmpA
+	pa, pb := headA, headB
+	for pa != pb {
+		if pa == nil {
+			pa = headB
+		} else {
+			pa = pa.Next
+		}
+		if pb == nil {
+			pb = headA
+		} else {
+			pb = pb.Next
+		}
+	}
+	return pa
 }

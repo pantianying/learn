@@ -21,15 +21,15 @@ func main() {
 	fmt.Println(s[1 : 2+1])
 }
 
-// func longestPalindrome(s string) string {
-// 	var result []rune
-// 	rs := []rune(s)
-// 	leftM := make(map[rune]int)
-// 	rightM := make(map[rune]int)
-// 	for i := range rs {
-// 		if v, ok := rightM[rs[i]]; ok {
-// 			result := rs[i:v] // 这里check 一下
-// 			return string(result)
-// 		}
-// 	}
-// }
+func longestPalindrome(s string) string {
+	var result []rune
+	rs := []rune(s)
+	leftM := make(map[rune]int)
+	rightM := make(map[rune]int)
+	for i := range rs {
+		if v, ok := rightM[rs[i]]; ok {
+			result := rs[i:v] // 这里check 一下
+			return string(result)
+		}
+	}
+}

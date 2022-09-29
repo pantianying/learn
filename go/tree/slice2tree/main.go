@@ -11,8 +11,34 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// 层序遍历的逆运算
 func main() {
+	//test := &TreeNode{
+	//	Val: 1,
+	//	Left: &TreeNode{
+	//		Val: 2,
+	//		Left: &TreeNode{
+	//			Val: 4,
+	//		},
+	//		Right: &TreeNode{
+	//			Val: 5,
+	//		},
+	//	},
+	//	Right: &TreeNode{
+	//		Val: 3,
+	//		Left: &TreeNode{
+	//			Val: 6,
+	//		},
+	//		Right: &TreeNode{
+	//			Val: 7,
+	//		},
+	//	},
+	//}
+	//levelOrder([]*TreeNode{test})
+	levelOrder2()
+}
+
+// 层序遍历的逆运算
+func levelOrder2() {
 	data := []int{1, 2, 3, 4, 5, 6, 7, 8}
 	var t *TreeNode
 	var treeChan = make(chan *TreeNode, 100)
@@ -48,4 +74,26 @@ func main() {
 	}
 	bytes, _ := json.Marshal(t)
 	fmt.Printf("%v", string(bytes))
+}
+
+// 层序遍历
+func levelOrder(queue []*TreeNode) {
+	if queue == nil {
+		return
+	}
+	for len(queue) > 0 {
+		fmt.Println(queue)
+		node := queue[0]
+		// pop
+		queue = queue[1:]
+		fmt.Println(node.Val)
+		if node.Left != nil {
+			// push back
+			queue = append(queue, node.Left)
+		}
+		if node.Right != nil {
+			// push back
+			queue = append(queue, node.Right)
+		}
+	}
 }
