@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/pantianying/keeplearning/gotest/debug"
+	"github.com/pantianying/learn/go/debug"
 	"reflect"
 )
 
@@ -11,7 +11,7 @@ type A struct {
 	Com string
 }
 
-//https://studygolang.com/articles/12348?fr=sidebar
+// https://studygolang.com/articles/12348?fr=sidebar
 func main() {
 	//fmtRefeclt()
 	//test2()

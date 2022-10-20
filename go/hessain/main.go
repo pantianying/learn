@@ -2,7 +2,7 @@ package main
 
 import (
 	hessian "github.com/apache/dubbo-go-hessian2"
-	"github.com/pantianying/keeplearning/gotest/debug"
+	"github.com/pantianying/learn/go/debug"
 )
 
 func main() {

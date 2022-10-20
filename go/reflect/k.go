@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pantianying/keeplearning/gotest/debug"
+	"github.com/pantianying/learn/go/debug"
 	"reflect"
 )
 

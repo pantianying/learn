@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	pb "github.com/pantianying/keeplearning/gotest/grpc/proto"
+	pb "github.com/pantianying/learn/go/grpc/proto"
 	"google.golang.org/grpc"
 	"log"
 	"time"
