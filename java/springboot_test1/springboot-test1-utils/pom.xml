@@ -19,7 +19,7 @@
     <properties>
         <java.version>1.8</java.version>
         <target.level>1.8</target.level>
-        <dubbo.version>2.7.2</dubbo.version>
+        <dubbo.version>2.7.18</dubbo.version>
     </properties>
 
     <dependencies>
